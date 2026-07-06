@@ -29,9 +29,10 @@ export default function LoansScreen() {
     const label = name.trim();
     if (!uid || !label) return;
     setAdding(true);
+    // 保存完了を待ってからクリアすると、その間に入力された次の名前を消してしまう
+    setName('');
     try {
       await addLedger(uid, label);
-      setName('');
     } catch (e) {
       Alert.alert('登録に失敗しました', e instanceof Error ? e.message : String(e));
     } finally {

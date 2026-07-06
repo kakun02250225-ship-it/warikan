@@ -1,4 +1,4 @@
-import type { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '@/lib/theme';
@@ -15,7 +15,7 @@ export function DateStepper({ date, onChange }: Props) {
       <Pressable style={styles.button} onPress={() => onChange(date.subtract(1, 'day'))}>
         <Text style={styles.arrow}>◀</Text>
       </Pressable>
-      <Pressable onPress={() => onChange(date.startOf('day'))} style={styles.center}>
+      <Pressable onPress={() => onChange(dayjs().startOf('day'))} style={styles.center}>
         <Text style={styles.label}>{date.format('M月D日(ddd)')}</Text>
       </Pressable>
       <Pressable style={styles.button} onPress={() => onChange(date.add(1, 'day'))}>

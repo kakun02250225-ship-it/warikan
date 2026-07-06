@@ -1,0 +1,30 @@
+{
+  "name": "貸し借り家計簿",
+  "short_name": "貸し借り家計簿",
+  "description": "個人の家計簿と人ごとの貸し借りを1つで管理",
+  "lang": "ja",
+  "start_url": "/warikan/",
+  "scope": "/warikan/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F6F8",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/warikan/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/warikan/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/warikan/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

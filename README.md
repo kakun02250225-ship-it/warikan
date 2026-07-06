@@ -44,6 +44,19 @@ npm start          # Expo Go で QR を読む
 npm run web        # ブラウザで確認
 ```
 
+## Web 版を GitHub Pages で公開する
+
+このリポジトリには自動デプロイ（`.github/workflows/deploy-pages.yml`）が入っています。
+一度だけ以下を設定すれば、以降はプッシュのたびに `https://<ユーザー名>.github.io/warikan/` へ自動公開されます。
+
+1. リポジトリの **Settings → Pages → Source** を「**GitHub Actions**」にする
+2. **Settings → Secrets and variables → Actions → Variables** に以下を登録（値は `.env` と同じ）
+   - `FIREBASE_API_KEY` / `FIREBASE_AUTH_DOMAIN` / `FIREBASE_PROJECT_ID` / `FIREBASE_STORAGE_BUCKET` / `FIREBASE_MESSAGING_SENDER_ID` / `FIREBASE_APP_ID`
+3. Firebase コンソール → **Authentication → 設定 → 承認済みドメイン** に `<ユーザー名>.github.io` を追加
+4. **Actions** タブから「Deploy web to GitHub Pages」を実行（以降はプッシュで自動実行）
+
+> リポジトリ名を `warikan` から変えた場合は `app.json` の `experiments.baseUrl` も合わせて変更してください。
+
 ## プロジェクト構成
 
 ```
